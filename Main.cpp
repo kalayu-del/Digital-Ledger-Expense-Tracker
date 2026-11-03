@@ -49,14 +49,14 @@ int main() {
                 outfile.close();
 
                 count++;
-                cout << "💰 Expense successfully recorded!\n";
+                cout << " Expense successfully recorded!\n";
             } else {
-                cout << "❌ Storage limit reached!\n";
+                cout << " Storage limit reached!\n";
             }
         } 
         else if (choice == 2) {
             if (count == 0) {
-                cout << "\n⚠️ No expense entries logged yet.\n";
+                cout << "\n No expense entries logged yet.\n";
             } else {
                 double grandTotal = 0;
                 cout << "\n" << left << setw(15) << "Category" << "Amount\n";
