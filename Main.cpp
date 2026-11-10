@@ -3,6 +3,7 @@
 #include <string>
 #include <iomanip>
 
+
 using namespace std;
 
 // Structure to group data related to a single expense item
@@ -17,7 +18,7 @@ int main() {
     int count = 0;
 
     // Load data from text file on startup
-    ifstream infile("expenses.txt");
+       ifstream infile("expenses.txt");
     if (infile.is_open()) {
         while (count < MAX_EXPENSES && infile >> wallet[count].category >> wallet[count].amount) {
             count++;
@@ -25,7 +26,7 @@ int main() {
         infile.close();
     }
 
-    int choice;
+       int choice;
     do {
         cout << "\n===============================";
         cout << "\n    POCKET EXPENSE TRACKER     ";
@@ -54,7 +55,7 @@ int main() {
                 cout << " Storage limit reached!\n";
             }
         } 
-        else if (choice == 2) {
+           else if (choice == 2) {
             if (count == 0) {
                 cout << "\n No expense entries logged yet.\n";
             } else {
@@ -62,7 +63,7 @@ int main() {
                 cout << "\n" << left << setw(15) << "Category" << "Amount\n";
                 cout << string(25, '-') << "\n";
                 
-                for (int i = 0; i < count; i++) {
+                   for (int i = 0; i < count; i++) {
                     cout << left << setw(15) << wallet[i].category 
                          << "$" << fixed << setprecision(2) << wallet[i].amount << "\n";
                     grandTotal += wallet[i].amount;
@@ -74,6 +75,6 @@ int main() {
         }
     } while (choice != 3);
 
-    cout << "\nGoodbye! Keeping tracking keeps you saving.\n";
+     cout << "\nGoodbye! Keeping tracking keeps you saving.\n";
     return 0;
 }
